@@ -9,7 +9,7 @@ export const Werkgebied = () => {
   return (
     <section id="werkgebied" className="bg-white py-24 lg:py-32 border-t border-zinc-200">
       <div className="max-w-[1400px] mx-auto px-6 lg:px-10">
-        <ChapterTag number="06" label={t.werkgebied.chapterLabel} />
+        <ChapterTag number="07" label={t.werkgebied.chapterLabel} />
         <div className="grid lg:grid-cols-12 gap-12">
           <Reveal className="lg:col-span-5">
             <h2 className="font-outfit font-black uppercase tracking-tighter text-brand-ink text-4xl sm:text-5xl lg:text-6xl leading-[0.95]">

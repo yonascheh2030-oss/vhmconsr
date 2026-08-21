@@ -7,7 +7,7 @@ export const FAQ = () => {
   return (
     <section id="faq" className="bg-brand-paper py-24 lg:py-32 border-t border-zinc-200">
       <div className="max-w-[1400px] mx-auto px-6 lg:px-10">
-        <ChapterTag number="08" label={t.faq.chapterLabel} />
+        <ChapterTag number="09" label={t.faq.chapterLabel} />
         <div className="grid lg:grid-cols-12 gap-12">
           <Reveal className="lg:col-span-4">
             <h2 className="font-outfit font-black uppercase tracking-tighter text-brand-ink text-4xl sm:text-5xl leading-[0.95]">

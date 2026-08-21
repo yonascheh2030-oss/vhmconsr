@@ -41,7 +41,7 @@ export const LeadForm = () => {
     <section id="contact" className="bg-brand-ink text-white py-24 lg:py-32">
       <div className="max-w-[1400px] mx-auto px-6 lg:px-10">
         <div className="flex items-center gap-4 mb-10">
-          <span className="font-outfit font-black text-sm tracking-[0.3em] text-brand-volt">07</span>
+          <span className="font-outfit font-black text-sm tracking-[0.3em] text-brand-volt">08</span>
           <span className="h-px flex-1 bg-white/15" />
           <span className="font-manrope text-xs font-semibold tracking-[0.3em] uppercase text-zinc-400">
             {t.form.chapterLabel}

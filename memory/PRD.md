@@ -34,6 +34,7 @@ Award-waardige leadgeneratie-website voor Sanivolt: spoedloodgieter & elektricie
 - 2026-08-21: Volledige Franse versie live — eigen URL's onder /fr (home /fr, regiopagina's /fr/plombier-electricien/{gemeente}, dienst-stad /fr/{dienst-fr}/{gemeente} met Franse slugs zoals debouchage, bornes-de-recharge), NL/FR-taalwisselaar in de header, hreflang-tags (nl/fr/x-default) en html lang per pagina, Franse JSON-LD/meta per pagina, sitemap.xml nu 211 URL's, alle componenten via centraal vertaalbestand (src/i18n/)
 - 2026-08-21: Engelse (/)en en Spaanse (/es) versies toegevoegd — site nu in 4 talen met taalwisselaar NL/FR/EN/ES, eigen slugs per taal (bijv. /en/drain-unblocking/evere, /es/desatascos/schaarbeek), hreflang over 4 talen, sitemap 449 URL's
 - 2026-08-21: Professionele dienstpagina's (hubs) per dienst in 4 talen: /diensten/{dienst}, /fr/services/{...}, /en/services/{...}, /es/servicios/{...} — met hero + beeld, bullets, prijsindicatie en links naar alle 13 dienst-stad-pagina's; homepage-dienstkaarten linken nu naar deze hubs
+- 2026-08-21: Team-sectie op de homepage (hoofdstuk 06, genummerde hoofdstukken doorgenummerd): vier senior engineers met naam, rol, specialiteit en portretfoto (PLACEHOLDER-stockfoto's tot echte teamfoto's beschikbaar zijn), vertaald in NL/FR/EN/ES (src/i18n/team.js)
 
 ## Geverifieerd
 - POST/GET /api/leads (curl) OK

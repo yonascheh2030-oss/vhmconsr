@@ -20,6 +20,7 @@ import { FloatingWhatsApp } from "@/components/FloatingWhatsApp";
 import { AreaPage } from "@/components/AreaPage";
 import { ServiceAreaPage } from "@/components/ServiceAreaPage";
 import { ServicePage } from "@/components/ServicePage";
+import { Team } from "@/components/Team";
 import { LangProvider } from "@/i18n/LangContext";
 import { SITE } from "@/constants/site";
 
@@ -33,6 +34,7 @@ const Home = () => (
     <BeforeAfter />
     <Pricing />
     <Reviews />
+    <Team />
     <Werkgebied />
     <LeadForm />
     <FAQ />
