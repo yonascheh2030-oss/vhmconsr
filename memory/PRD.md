@@ -27,16 +27,21 @@ Award-waardige leadgeneratie-website voor Sanivolt: spoedloodgieter & elektricie
 ## Geïmplementeerd
 - 2026-08-21: Kinetic hero (masked line-reveal, parallax beeld), locatie-marquee, diensten-bento (7 diensten), werkwijze-manifesto (4 stappen), voor/na-sectie, prijzen + aanbieding (−15%, code SANIVOLT15), reviews, werkgebied (13 gemeenten), offerteformulier → POST /api/leads (MongoDB), FAQ-accordeon, footer, zwevende WhatsApp-knop, lenis smooth scroll
 - 2026-08-21: Volledige SEO-laag (meta, OG, canonical sanivolt.be, JSON-LD LocalBusiness/Plumber/Electrician + FAQPage, robots.txt, sitemap.xml, llms.txt voor AI-zoekmachines)
+- 2026-08-21: 13 regiopagina's per gemeente op /spoedloodgieter/{gemeente} (Zaventem, Diegem, Haren, Schaarbeek, Brussel-Zuid, Machelen, Vilvoorde, Evere, Kraainem, Steenokkerzeel, Kortenberg, Grimbergen, Wezembeek-Oppem) met unieke lokale tekst, eigen meta-title/description/canonical/JSON-LD per pagina (react-helmet-async), interne links vanuit Werkgebied-chips en interlinks tussen regio's; sitemap.xml en llms.txt uitgebreid met alle regio-URL's
+- Bugfix 2026-08-21: route veranderd van /spoedloodgieter-:slug naar /spoedloodgieter/:slug (React Router v7 ondersteunt geen gedeeltelijke segment-params) + Helmet <title> als template-string
 
 ## Geverifieerd
 - POST/GET /api/leads (curl) OK
 - Formulier end-to-end via browser OK (succes-toast + opslag)
 - Navigatie/anchors, hero, diensten, prijzen, werkwijze, contact visueel OK
+- Regiopagina's: titel/H1 per gemeente OK (Zaventem, Schaarbeek, Diegem getest), interlink-navigatie OK, homepage-chips → regiopagina OK
 
 ## Backlog (prioriteit)
 - P0: Echte contactgegevens (telefoon, e-mail, adres, BTW-nummer) vervangen; domein sanivolt.be koppelen
 - P0: E-mailnotificatie bij nieuwe lead (Resend)
 - P1: Leads-dashboard (admin) om aanvragen op te volgen
 - P1: Google Business Profile + echte reviews integreren
-- P1: Aparte SEO-landingspagina's per gemeente (Zaventem, Diegem, Schaarbeek...)
+- P1: Dienst × Stad matrix-pagina's (bijv. /ontstopping/brussel, /airco/zaventem) — strategie aangedragen door gebruiker
+- P1: SEA-voorbereiding: Google Ads landingspagina's + Local Services Ads (externe setup door gebruiker)
+- P2: Dynamische geotargeting van titels op basis van bezoekerslocatie
 - P2: Voor/na-slider (interactief), blog met tips (SEO), meertaligheid (FR/EN)

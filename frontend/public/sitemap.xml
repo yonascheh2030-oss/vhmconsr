@@ -5,4 +5,17 @@
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
   </url>
+  <url><loc>https://www.sanivolt.be/spoedloodgieter/zaventem</loc><changefreq>monthly</changefreq><priority>0.9</priority></url>
+  <url><loc>https://www.sanivolt.be/spoedloodgieter/diegem</loc><changefreq>monthly</changefreq><priority>0.9</priority></url>
+  <url><loc>https://www.sanivolt.be/spoedloodgieter/haren</loc><changefreq>monthly</changefreq><priority>0.9</priority></url>
+  <url><loc>https://www.sanivolt.be/spoedloodgieter/schaarbeek</loc><changefreq>monthly</changefreq><priority>0.9</priority></url>
+  <url><loc>https://www.sanivolt.be/spoedloodgieter/brussel-zuid</loc><changefreq>monthly</changefreq><priority>0.9</priority></url>
+  <url><loc>https://www.sanivolt.be/spoedloodgieter/machelen</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://www.sanivolt.be/spoedloodgieter/vilvoorde</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://www.sanivolt.be/spoedloodgieter/evere</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://www.sanivolt.be/spoedloodgieter/kraainem</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://www.sanivolt.be/spoedloodgieter/steenokkerzeel</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://www.sanivolt.be/spoedloodgieter/kortenberg</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://www.sanivolt.be/spoedloodgieter/grimbergen</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://www.sanivolt.be/spoedloodgieter/wezembeek-oppem</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
 </urlset>

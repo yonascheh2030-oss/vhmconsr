@@ -1,6 +1,7 @@
 import { MapPin } from "lucide-react";
+import { Link } from "react-router-dom";
 import { Reveal, ChapterTag } from "./Reveal";
-import { SITE } from "../constants/site";
+import { AREAS } from "../constants/areas";
 
 export const Werkgebied = () => (
   <section id="werkgebied" className="bg-white py-24 lg:py-32 border-t border-zinc-200">
@@ -20,20 +21,22 @@ export const Werkgebied = () => (
           <p className="mt-4 font-manrope text-sm text-zinc-400 leading-relaxed">
             Woont u net buiten deze kernregio? Bel gerust: we rijden ook naar Machelen, Vilvoorde,
             Evere, Kraainem, Steenokkerzeel, Kortenberg, Grimbergen, Wezembeek-Oppem en het
-            Brussels Hoofdstedelijk Gewest.
+            Brussels Hoofdstedelijk Gewest. Klik op uw gemeente voor meer info.
           </p>
         </Reveal>
 
         <Reveal delay={0.15} className="lg:col-span-7">
           <div className="flex flex-wrap gap-3" data-testid="werkgebied-areas">
-            {SITE.areas.map((area) => (
-              <span
-                key={area}
+            {AREAS.map((area) => (
+              <Link
+                key={area.slug}
+                to={`/spoedloodgieter/${area.slug}`}
+                data-testid={`werkgebied-link-${area.slug}`}
                 className="inline-flex items-center gap-2 border border-zinc-200 bg-brand-paper px-5 py-3 font-outfit font-bold text-sm tracking-tight text-brand-ink hover:border-brand-blue hover:text-brand-blue hover:-translate-y-0.5 transition-all duration-200"
               >
                 <MapPin className="w-4 h-4 text-brand-blue" />
-                {area}
-              </span>
+                {area.name}
+              </Link>
             ))}
             <span className="inline-flex items-center gap-2 bg-brand-blue text-white px-5 py-3 font-outfit font-bold text-sm tracking-tight">
               + heel de omgeving

@@ -1,6 +1,7 @@
 import { useEffect } from "react";
 import "@/App.css";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { HelmetProvider } from "react-helmet-async";
 import Lenis from "lenis";
 import { Toaster } from "sonner";
 import { Header } from "@/components/Header";
@@ -16,6 +17,7 @@ import { LeadForm } from "@/components/LeadForm";
 import { FAQ } from "@/components/FAQ";
 import { Footer } from "@/components/Footer";
 import { FloatingWhatsApp } from "@/components/FloatingWhatsApp";
+import { AreaPage } from "@/components/AreaPage";
 
 const Home = () => (
   <main>
@@ -54,11 +56,14 @@ function App() {
 
   return (
     <div className="App">
-      <BrowserRouter>
-        <Routes>
-          <Route path="/" element={<Home />} />
-        </Routes>
-      </BrowserRouter>
+      <HelmetProvider>
+        <BrowserRouter>
+          <Routes>
+            <Route path="/" element={<Home />} />
+            <Route path="/spoedloodgieter/:slug" element={<AreaPage />} />
+          </Routes>
+        </BrowserRouter>
+      </HelmetProvider>
       <Toaster position="top-center" richColors />
     </div>
   );
