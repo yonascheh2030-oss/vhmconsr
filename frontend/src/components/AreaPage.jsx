@@ -27,13 +27,13 @@ import { AREAS } from "../constants/areas";
 import { SITE } from "../constants/site";
 
 const SERVICES = [
-  { icon: Droplets, name: "Spoedloodgieterij" },
-  { icon: Zap, name: "Elektriciteit" },
-  { icon: Wrench, name: "Ontstopping" },
-  { icon: Flame, name: "Verwarming" },
-  { icon: ShowerHead, name: "Sanitaire renovatie" },
-  { icon: Wind, name: "Airco & klimaat" },
-  { icon: BatteryCharging, name: "Laadpalen" },
+  { icon: Droplets, name: "Spoedloodgieterij", slug: "spoedloodgieter" },
+  { icon: Zap, name: "Elektriciteit", slug: "elektricien" },
+  { icon: Wrench, name: "Ontstopping", slug: "ontstopping" },
+  { icon: Flame, name: "Verwarming", slug: "verwarming" },
+  { icon: ShowerHead, name: "Sanitaire renovatie", slug: "sanitair-renovatie" },
+  { icon: Wind, name: "Airco & klimaat", slug: "airco" },
+  { icon: BatteryCharging, name: "Laadpalen", slug: "laadpalen" },
 ];
 
 export const AreaPage = () => {
@@ -158,11 +158,9 @@ export const AreaPage = () => {
           </Reveal>
           <div className="mt-10 grid sm:grid-cols-2 lg:grid-cols-4 gap-px bg-white/10 border border-white/10" data-testid="area-services-strip">
             {SERVICES.map((s, i) => (
-              <a
+              <Link
                 key={s.name}
-                href={SITE.whatsapp}
-                target="_blank"
-                rel="noopener noreferrer"
+                to={`/${s.slug}/${area.slug}`}
                 data-testid={`area-service-${i}`}
                 className="group flex items-center justify-between gap-3 bg-brand-ink px-6 py-6 hover:bg-white/[0.05] transition-colors duration-300"
               >
@@ -171,7 +169,7 @@ export const AreaPage = () => {
                   <span className="font-outfit font-bold text-base tracking-tight">{s.name}</span>
                 </span>
                 <ArrowUpRight className="w-4 h-4 text-brand-volt opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
-              </a>
+              </Link>
             ))}
           </div>
         </div>

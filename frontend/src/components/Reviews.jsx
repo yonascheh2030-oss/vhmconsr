@@ -1,5 +1,6 @@
 import { Star, Quote } from "lucide-react";
 import { Reveal, ChapterTag } from "./Reveal";
+import { SITE } from "../constants/site";
 
 const REVIEWS = [
   {
@@ -34,14 +35,26 @@ export const Reviews = () => (
           <h2 className="font-outfit font-black uppercase tracking-tighter text-brand-ink text-4xl sm:text-5xl lg:text-6xl leading-[0.95]">
             Buren die ons <span className="text-brand-blue">belden.</span>
           </h2>
-          <div className="flex items-center gap-3" data-testid="reviews-score">
-            <div className="flex">
-              {[...Array(5)].map((_, i) => (
-                <Star key={i} className="w-5 h-5 fill-brand-blue text-brand-blue" />
-              ))}
+          <div className="flex flex-col items-start gap-4">
+            <div className="flex items-center gap-3" data-testid="reviews-score">
+              <div className="flex">
+                {[...Array(5)].map((_, i) => (
+                  <Star key={i} className="w-5 h-5 fill-brand-blue text-brand-blue" />
+                ))}
+              </div>
+              <span className="font-outfit font-bold text-brand-ink">4.9/5</span>
+              <span className="font-manrope text-sm text-zinc-500">op basis van 120+ interventies</span>
             </div>
-            <span className="font-outfit font-bold text-brand-ink">4.9/5</span>
-            <span className="font-manrope text-sm text-zinc-500">op basis van 120+ interventies</span>
+            <a
+              href={SITE.googleReviewUrl}
+              target="_blank"
+              rel="noopener noreferrer"
+              data-testid="reviews-google-button"
+              className="inline-flex items-center gap-2 border border-brand-ink px-5 py-3 font-outfit text-xs font-bold tracking-[0.15em] uppercase text-brand-ink hover:-translate-y-0.5 hover:shadow-[4px_4px_0px_#0038FF] transition-transform duration-200"
+            >
+              <Star className="w-4 h-4 fill-brand-blue text-brand-blue" />
+              Beoordeel ons op Google
+            </a>
           </div>
         </div>
       </Reveal>

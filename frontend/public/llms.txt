@@ -38,3 +38,9 @@ Zaventem, Diegem, Haren, Machelen, Vilvoorde, Evere, Schaarbeek (Schaerbeek), Br
 - https://www.sanivolt.be/spoedloodgieter/kortenberg
 - https://www.sanivolt.be/spoedloodgieter/grimbergen
 - https://www.sanivolt.be/spoedloodgieter/wezembeek-oppem
+
+## Dienstpagina's per gemeente (dienst + stad)
+URL-patroon: https://www.sanivolt.be/{dienst}/{gemeente}
+Diensten: spoedloodgieter, elektricien, ontstopping, verwarming, sanitair-renovatie, airco, laadpalen
+Gemeenten: zaventem, diegem, haren, schaarbeek, brussel-zuid, machelen, vilvoorde, evere, kraainem, steenokkerzeel, kortenberg, grimbergen, wezembeek-oppem
+Voorbeelden: https://www.sanivolt.be/ontstopping/vilvoorde en https://www.sanivolt.be/airco/zaventem

@@ -29,19 +29,24 @@ Award-waardige leadgeneratie-website voor Sanivolt: spoedloodgieter & elektricie
 - 2026-08-21: Volledige SEO-laag (meta, OG, canonical sanivolt.be, JSON-LD LocalBusiness/Plumber/Electrician + FAQPage, robots.txt, sitemap.xml, llms.txt voor AI-zoekmachines)
 - 2026-08-21: 13 regiopagina's per gemeente op /spoedloodgieter/{gemeente} (Zaventem, Diegem, Haren, Schaarbeek, Brussel-Zuid, Machelen, Vilvoorde, Evere, Kraainem, Steenokkerzeel, Kortenberg, Grimbergen, Wezembeek-Oppem) met unieke lokale tekst, eigen meta-title/description/canonical/JSON-LD per pagina (react-helmet-async), interne links vanuit Werkgebied-chips en interlinks tussen regio's; sitemap.xml en llms.txt uitgebreid met alle regio-URL's
 - Bugfix 2026-08-21: route veranderd van /spoedloodgieter-:slug naar /spoedloodgieter/:slug (React Router v7 ondersteunt geen gedeeltelijke segment-params) + Helmet <title> als template-string
+- 2026-08-21: Dienst × Stad matrix live — 91 pagina's op /{dienst}/{gemeente} (7 diensten: spoedloodgieter, elektricien, ontstopping, verwarming, sanitair-renovatie, airco, laadpalen × 13 gemeenten), elk met eigen meta-title/description/canonical/JSON-LD Service, prijsindicatie, USP-bullets en tweerichtings-interlinks (andere diensten in dezelfde gemeente + dezelfde dienst in andere gemeenten); diensten-strip op regiopagina's linkt nu intern; sitemap.xml bevat 106 URL's; llms.txt beschrijft het URL-patroon
+- 2026-08-21: Review-automatisering (deel 1): "Beoordeel ons op Google"-knop bij Reviews + link in footer; SITE.googleReviewUrl is nog een PLACEHOLDER tot het Google Bedrijfsprofiel bestaat
 
 ## Geverifieerd
 - POST/GET /api/leads (curl) OK
 - Formulier end-to-end via browser OK (succes-toast + opslag)
 - Navigatie/anchors, hero, diensten, prijzen, werkwijze, contact visueel OK
 - Regiopagina's: titel/H1 per gemeente OK (Zaventem, Schaarbeek, Diegem getest), interlink-navigatie OK, homepage-chips → regiopagina OK
+- Dienst-stad pagina's: /ontstopping/vilvoorde en cross-link naar /airco/vilvoorde OK, breadcrumb OK
+- Review-knop zichtbaar (placeholder-URL tot Google Bedrijfsprofiel live is)
 
 ## Backlog (prioriteit)
 - P0: Echte contactgegevens (telefoon, e-mail, adres, BTW-nummer) vervangen; domein sanivolt.be koppelen
 - P0: E-mailnotificatie bij nieuwe lead (Resend)
 - P1: Leads-dashboard (admin) om aanvragen op te volgen
-- P1: Google Business Profile + echte reviews integreren
-- P1: Dienst × Stad matrix-pagina's (bijv. /ontstopping/brussel, /airco/zaventem) — strategie aangedragen door gebruiker
+- P1: Google Business Profile aanmaken + echte review-link vervangen (nu placeholder)
+- P1: Lead-meldingen per e-mail bij nieuwe aanvraag (Resend) — door gebruiker uitgesteld
+- P1: Review-automatisering deel 2: automatisch review-verzoek versturen na afgeronde klus (hangt samen met lead-meldingen)
 - P1: SEA-voorbereiding: Google Ads landingspagina's + Local Services Ads (externe setup door gebruiker)
 - P2: Dynamische geotargeting van titels op basis van bezoekerslocatie
 - P2: Voor/na-slider (interactief), blog met tips (SEO), meertaligheid (FR/EN)

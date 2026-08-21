@@ -6,6 +6,7 @@ export const SITE = {
   whatsapp:
     "https://wa.me/32470000000?text=Hallo%20Sanivolt%2C%20ik%20heb%20een%20klus%20(loodgieterij%2Felektriciteit).%20Kunnen%20jullie%20langskomen%3F",
   email: "info@sanivolt.be",
+  googleReviewUrl: "https://g.page/r/SANIVOLT-PLACEHOLDER/review",
   areas: [
     "Zaventem",
     "Diegem",

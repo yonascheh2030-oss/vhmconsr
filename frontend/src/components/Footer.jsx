@@ -53,7 +53,16 @@ export const Footer = () => (
           © 2026 Sanivolt — Spoedloodgieter & elektricien, 24/7. BTW BE 0000.000.000
         </p>
         <p className="font-manrope text-xs text-zinc-500">
-          Erkende techniekers · 2 jaar garantie · Transparante prijzen
+          Erkende techniekers · 2 jaar garantie · Transparante prijzen ·{" "}
+          <a
+            href={SITE.googleReviewUrl}
+            target="_blank"
+            rel="noopener noreferrer"
+            data-testid="footer-review-link"
+            className="underline underline-offset-4 hover:text-brand-volt transition-colors"
+          >
+            Beoordeel ons op Google
+          </a>
         </p>
       </div>
     </div>

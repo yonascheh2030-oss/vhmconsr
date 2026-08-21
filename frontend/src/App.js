@@ -18,6 +18,7 @@ import { FAQ } from "@/components/FAQ";
 import { Footer } from "@/components/Footer";
 import { FloatingWhatsApp } from "@/components/FloatingWhatsApp";
 import { AreaPage } from "@/components/AreaPage";
+import { ServiceAreaPage } from "@/components/ServiceAreaPage";
 
 const Home = () => (
   <main>
@@ -61,6 +62,7 @@ function App() {
           <Routes>
             <Route path="/" element={<Home />} />
             <Route path="/spoedloodgieter/:slug" element={<AreaPage />} />
+            <Route path="/:serviceSlug/:areaSlug" element={<ServiceAreaPage />} />
           </Routes>
         </BrowserRouter>
       </HelmetProvider>
