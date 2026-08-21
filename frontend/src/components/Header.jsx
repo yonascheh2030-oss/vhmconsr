@@ -1,0 +1,101 @@
+import { useState } from "react";
+import { Zap, Phone, Menu, X } from "lucide-react";
+import { SITE } from "../constants/site";
+
+const NAV = [
+  { label: "Diensten", href: "#diensten" },
+  { label: "Werkwijze", href: "#werkwijze" },
+  { label: "Prijzen", href: "#prijzen" },
+  { label: "Reviews", href: "#reviews" },
+  { label: "Contact", href: "#contact" },
+];
+
+export const Header = () => {
+  const [open, setOpen] = useState(false);
+
+  const go = (e, href) => {
+    e.preventDefault();
+    setOpen(false);
+    if (window.__lenis) {
+      window.__lenis.scrollTo(href, { offset: -70, duration: 1.4 });
+    } else {
+      document.querySelector(href)?.scrollIntoView({ behavior: "smooth" });
+    }
+  };
+
+  return (
+    <header className="fixed top-0 inset-x-0 z-50 bg-white/80 backdrop-blur-xl border-b border-zinc-200">
+      <div className="max-w-[1400px] mx-auto px-6 lg:px-10 h-[70px] flex items-center justify-between">
+        <a
+          href="#top"
+          onClick={(e) => go(e, "#top")}
+          data-testid="header-logo"
+          className="flex items-center gap-2 group"
+        >
+          <span className="w-9 h-9 bg-brand-blue flex items-center justify-center transition-transform duration-300 group-hover:rotate-12">
+            <Zap className="w-5 h-5 text-white" strokeWidth={2.5} />
+          </span>
+          <span className="font-outfit font-black text-xl tracking-tighter text-brand-ink">
+            SANI<span className="text-brand-blue">VOLT</span>
+          </span>
+        </a>
+
+        <nav className="hidden lg:flex items-center gap-8" data-testid="header-nav">
+          {NAV.map((item) => (
+            <a
+              key={item.href}
+              href={item.href}
+              onClick={(e) => go(e, item.href)}
+              data-testid={`nav-${item.label.toLowerCase()}`}
+              className="font-manrope text-xs font-semibold tracking-[0.2em] uppercase text-zinc-500 hover:text-brand-blue transition-colors duration-300"
+            >
+              {item.label}
+            </a>
+          ))}
+        </nav>
+
+        <div className="flex items-center gap-3">
+          <a
+            href={SITE.phoneHref}
+            data-testid="header-call-button"
+            className="hidden sm:flex items-center gap-2 bg-brand-danger text-white px-5 py-3 font-outfit text-xs font-bold tracking-[0.15em] uppercase hover:-translate-y-0.5 hover:shadow-[4px_4px_0px_#09090B] transition-transform duration-200"
+          >
+            <Phone className="w-4 h-4 animate-pulse" />
+            <span className="hidden md:inline">24/7</span> {SITE.phoneDisplay}
+          </a>
+          <button
+            onClick={() => setOpen(!open)}
+            data-testid="header-menu-toggle"
+            className="lg:hidden w-11 h-11 flex items-center justify-center border border-zinc-200"
+            aria-label="Menu"
+          >
+            {open ? <X className="w-5 h-5" /> : <Menu className="w-5 h-5" />}
+          </button>
+        </div>
+      </div>
+
+      {open && (
+        <div className="lg:hidden border-t border-zinc-200 bg-white" data-testid="header-mobile-menu">
+          {NAV.map((item) => (
+            <a
+              key={item.href}
+              href={item.href}
+              onClick={(e) => go(e, item.href)}
+              data-testid={`nav-mobile-${item.label.toLowerCase()}`}
+              className="block px-6 py-4 font-outfit font-bold text-lg tracking-tight border-b border-zinc-100 text-brand-ink"
+            >
+              {item.label}
+            </a>
+          ))}
+          <a
+            href={SITE.phoneHref}
+            data-testid="header-mobile-call"
+            className="flex items-center gap-2 px-6 py-4 font-outfit font-bold text-brand-danger"
+          >
+            <Phone className="w-4 h-4" /> Bel nu — {SITE.phoneDisplay}
+          </a>
+        </div>
+      )}
+    </header>
+  );
+};
