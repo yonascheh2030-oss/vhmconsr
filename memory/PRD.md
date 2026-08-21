@@ -31,6 +31,7 @@ Award-waardige leadgeneratie-website voor Sanivolt: spoedloodgieter & elektricie
 - Bugfix 2026-08-21: route veranderd van /spoedloodgieter-:slug naar /spoedloodgieter/:slug (React Router v7 ondersteunt geen gedeeltelijke segment-params) + Helmet <title> als template-string
 - 2026-08-21: Dienst × Stad matrix live — 91 pagina's op /{dienst}/{gemeente} (7 diensten: spoedloodgieter, elektricien, ontstopping, verwarming, sanitair-renovatie, airco, laadpalen × 13 gemeenten), elk met eigen meta-title/description/canonical/JSON-LD Service, prijsindicatie, USP-bullets en tweerichtings-interlinks (andere diensten in dezelfde gemeente + dezelfde dienst in andere gemeenten); diensten-strip op regiopagina's linkt nu intern; sitemap.xml bevat 106 URL's; llms.txt beschrijft het URL-patroon
 - 2026-08-21: Review-automatisering (deel 1): "Beoordeel ons op Google"-knop bij Reviews + link in footer; SITE.googleReviewUrl is nog een PLACEHOLDER tot het Google Bedrijfsprofiel bestaat
+- 2026-08-21: Volledige Franse versie live — eigen URL's onder /fr (home /fr, regiopagina's /fr/plombier-electricien/{gemeente}, dienst-stad /fr/{dienst-fr}/{gemeente} met Franse slugs zoals debouchage, bornes-de-recharge), NL/FR-taalwisselaar in de header, hreflang-tags (nl/fr/x-default) en html lang per pagina, Franse JSON-LD/meta per pagina, sitemap.xml nu 211 URL's, alle componenten via centraal vertaalbestand (src/i18n/)
 
 ## Geverifieerd
 - POST/GET /api/leads (curl) OK
@@ -49,4 +50,4 @@ Award-waardige leadgeneratie-website voor Sanivolt: spoedloodgieter & elektricie
 - P1: Review-automatisering deel 2: automatisch review-verzoek versturen na afgeronde klus (hangt samen met lead-meldingen)
 - P1: SEA-voorbereiding: Google Ads landingspagina's + Local Services Ads (externe setup door gebruiker)
 - P2: Dynamische geotargeting van titels op basis van bezoekerslocatie
-- P2: Voor/na-slider (interactief), blog met tips (SEO), meertaligheid (FR/EN)
+- P2: Voor/na-slider (interactief), blog met tips (SEO), Engelse versie (derde taal)

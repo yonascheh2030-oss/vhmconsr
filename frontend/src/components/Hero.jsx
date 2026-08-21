@@ -3,12 +3,15 @@ import { motion, useScroll, useTransform } from "framer-motion";
 import { Phone, MessageCircle, ArrowDown, Clock, ShieldCheck, MapPin } from "lucide-react";
 import { MaskLine } from "./Reveal";
 import { SITE, IMAGES } from "../constants/site";
+import { useLang } from "../i18n/LangContext";
 
 export const Hero = () => {
+  const { t } = useLang();
   const ref = useRef(null);
   const { scrollYProgress } = useScroll({ target: ref, offset: ["start start", "end start"] });
   const imgY = useTransform(scrollYProgress, [0, 1], [0, 140]);
   const bgY = useTransform(scrollYProgress, [0, 1], [0, -60]);
+  const chipIcons = [Clock, ShieldCheck, MapPin];
 
   return (
     <section id="top" ref={ref} className="relative pt-[70px] overflow-hidden bg-brand-paper">
@@ -22,23 +25,23 @@ export const Hero = () => {
           <MaskLine delay={0.1}>
             <span className="inline-flex items-center gap-2 border border-zinc-200 bg-white px-4 py-2 font-manrope text-[11px] font-semibold tracking-[0.25em] uppercase text-zinc-600 mb-8">
               <span className="w-2 h-2 rounded-full bg-brand-danger animate-pulse" />
-              Nu beschikbaar — 24/7 spoeddienst
+              {t.hero.badge}
             </span>
           </MaskLine>
 
           <h1 className="font-outfit font-black uppercase tracking-tighter leading-[0.92] text-brand-ink text-[13vw] sm:text-6xl lg:text-7xl xl:text-[86px]">
-            <MaskLine delay={0.2}>Spoedklussen.</MaskLine>
+            <MaskLine delay={0.2}>{t.hero.l1}</MaskLine>
             <MaskLine delay={0.35}>
-              <span className="text-brand-blue">Loodgieter</span> &
+              <span className="text-brand-blue">{t.hero.l2a}</span> {t.hero.l2b}
             </MaskLine>
-            <MaskLine delay={0.5}>Elektricien.</MaskLine>
+            <MaskLine delay={0.5}>{t.hero.l3}</MaskLine>
           </h1>
 
           <MaskLine delay={0.7}>
             <p className="mt-8 max-w-xl font-manrope text-base md:text-lg leading-relaxed text-zinc-500">
-              Lekkage, verstopping, kortsluiting of stroompanne? Sanivolt staat{" "}
-              <strong className="text-brand-ink font-semibold">binnen 60 minuten</strong> bij u voor
-              de deur — in Zaventem, Diegem, Haren, Zuid, Schaarbeek en omstreken.
+              {t.hero.subA}
+              <strong className="text-brand-ink font-semibold">{t.hero.subB}</strong>
+              {t.hero.subC}
             </p>
           </MaskLine>
 
@@ -50,7 +53,7 @@ export const Hero = () => {
                 className="flex items-center gap-3 bg-brand-ink text-white px-8 py-4 font-outfit text-sm font-bold tracking-[0.15em] uppercase hover:-translate-y-1 hover:shadow-[4px_4px_0px_#0038FF] transition-transform duration-200"
               >
                 <Phone className="w-4 h-4" />
-                Bel {SITE.phoneDisplay}
+                {t.hero.call} {SITE.phoneDisplay}
               </a>
               <a
                 href={SITE.whatsapp}
@@ -71,23 +74,22 @@ export const Hero = () => {
                 data-testid="hero-quote-link"
                 className="font-manrope text-sm font-semibold text-brand-blue underline underline-offset-8 decoration-2 hover:decoration-brand-volt transition-colors"
               >
-                of vraag een offerte
+                {t.hero.quote}
               </a>
             </div>
           </MaskLine>
 
           <MaskLine delay={1}>
             <div className="mt-12 flex flex-wrap gap-x-8 gap-y-3">
-              {[
-                { icon: Clock, text: "Binnen 60 min ter plaatse" },
-                { icon: ShieldCheck, text: "2 jaar garantie" },
-                { icon: MapPin, text: "Zaventem & omstreken" },
-              ].map(({ icon: Icon, text }) => (
-                <span key={text} className="flex items-center gap-2 font-manrope text-xs font-semibold tracking-wide uppercase text-zinc-500">
-                  <Icon className="w-4 h-4 text-brand-blue" />
-                  {text}
-                </span>
-              ))}
+              {t.hero.chips.map((text, i) => {
+                const Icon = chipIcons[i];
+                return (
+                  <span key={text} className="flex items-center gap-2 font-manrope text-xs font-semibold tracking-wide uppercase text-zinc-500">
+                    <Icon className="w-4 h-4 text-brand-blue" />
+                    {text}
+                  </span>
+                );
+              })}
             </div>
           </MaskLine>
         </div>
@@ -104,7 +106,7 @@ export const Hero = () => {
               <motion.img
                 style={{ y: imgY, scale: 1.25 }}
                 src={IMAGES.hero}
-                alt="Water en elektriciteit — Sanivolt spoeddienst loodgieter elektricien"
+                alt="Sanivolt — plombier et électricien d'urgence / spoedloodgieter elektricien"
                 className="w-full h-full object-cover grayscale-[35%] contrast-110"
                 data-testid="hero-image"
               />
@@ -118,10 +120,10 @@ export const Hero = () => {
               data-testid="hero-badge"
             >
               <p className="font-outfit font-black text-3xl text-brand-ink leading-none">
-                60<span className="text-brand-blue">min</span>
+                {t.hero.badgeValue}<span className="text-brand-blue">{t.hero.badgeUnit}</span>
               </p>
               <p className="font-manrope text-[11px] font-semibold tracking-[0.2em] uppercase text-zinc-500 mt-1">
-                gem. responstijd spoed
+                {t.hero.badgeLabel}
               </p>
             </motion.div>
           </motion.div>

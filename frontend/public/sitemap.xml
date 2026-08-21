@@ -1,19 +1,33 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url><loc>https://www.sanivolt.be/</loc><changefreq>weekly</changefreq><priority>1.0</priority></url>
+  <url><loc>https://www.sanivolt.be/fr</loc><changefreq>weekly</changefreq><priority>0.9</priority></url>
   <url><loc>https://www.sanivolt.be/spoedloodgieter/zaventem</loc><changefreq>monthly</changefreq><priority>0.9</priority></url>
+  <url><loc>https://www.sanivolt.be/fr/plombier-electricien/zaventem</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
   <url><loc>https://www.sanivolt.be/spoedloodgieter/diegem</loc><changefreq>monthly</changefreq><priority>0.9</priority></url>
+  <url><loc>https://www.sanivolt.be/fr/plombier-electricien/diegem</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
   <url><loc>https://www.sanivolt.be/spoedloodgieter/haren</loc><changefreq>monthly</changefreq><priority>0.9</priority></url>
+  <url><loc>https://www.sanivolt.be/fr/plombier-electricien/haren</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
   <url><loc>https://www.sanivolt.be/spoedloodgieter/schaarbeek</loc><changefreq>monthly</changefreq><priority>0.9</priority></url>
+  <url><loc>https://www.sanivolt.be/fr/plombier-electricien/schaarbeek</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
   <url><loc>https://www.sanivolt.be/spoedloodgieter/brussel-zuid</loc><changefreq>monthly</changefreq><priority>0.9</priority></url>
+  <url><loc>https://www.sanivolt.be/fr/plombier-electricien/brussel-zuid</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
   <url><loc>https://www.sanivolt.be/spoedloodgieter/machelen</loc><changefreq>monthly</changefreq><priority>0.9</priority></url>
+  <url><loc>https://www.sanivolt.be/fr/plombier-electricien/machelen</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
   <url><loc>https://www.sanivolt.be/spoedloodgieter/vilvoorde</loc><changefreq>monthly</changefreq><priority>0.9</priority></url>
+  <url><loc>https://www.sanivolt.be/fr/plombier-electricien/vilvoorde</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
   <url><loc>https://www.sanivolt.be/spoedloodgieter/evere</loc><changefreq>monthly</changefreq><priority>0.9</priority></url>
+  <url><loc>https://www.sanivolt.be/fr/plombier-electricien/evere</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
   <url><loc>https://www.sanivolt.be/spoedloodgieter/kraainem</loc><changefreq>monthly</changefreq><priority>0.9</priority></url>
+  <url><loc>https://www.sanivolt.be/fr/plombier-electricien/kraainem</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
   <url><loc>https://www.sanivolt.be/spoedloodgieter/steenokkerzeel</loc><changefreq>monthly</changefreq><priority>0.9</priority></url>
+  <url><loc>https://www.sanivolt.be/fr/plombier-electricien/steenokkerzeel</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
   <url><loc>https://www.sanivolt.be/spoedloodgieter/kortenberg</loc><changefreq>monthly</changefreq><priority>0.9</priority></url>
+  <url><loc>https://www.sanivolt.be/fr/plombier-electricien/kortenberg</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
   <url><loc>https://www.sanivolt.be/spoedloodgieter/grimbergen</loc><changefreq>monthly</changefreq><priority>0.9</priority></url>
+  <url><loc>https://www.sanivolt.be/fr/plombier-electricien/grimbergen</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
   <url><loc>https://www.sanivolt.be/spoedloodgieter/wezembeek-oppem</loc><changefreq>monthly</changefreq><priority>0.9</priority></url>
+  <url><loc>https://www.sanivolt.be/fr/plombier-electricien/wezembeek-oppem</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
   <url><loc>https://www.sanivolt.be/spoedloodgieter/zaventem</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
   <url><loc>https://www.sanivolt.be/spoedloodgieter/diegem</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
   <url><loc>https://www.sanivolt.be/spoedloodgieter/haren</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
@@ -105,4 +119,95 @@
   <url><loc>https://www.sanivolt.be/laadpalen/kortenberg</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
   <url><loc>https://www.sanivolt.be/laadpalen/grimbergen</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
   <url><loc>https://www.sanivolt.be/laadpalen/wezembeek-oppem</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://www.sanivolt.be/fr/plombier-urgent/zaventem</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://www.sanivolt.be/fr/plombier-urgent/diegem</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://www.sanivolt.be/fr/plombier-urgent/haren</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://www.sanivolt.be/fr/plombier-urgent/schaarbeek</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://www.sanivolt.be/fr/plombier-urgent/brussel-zuid</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://www.sanivolt.be/fr/plombier-urgent/machelen</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://www.sanivolt.be/fr/plombier-urgent/vilvoorde</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://www.sanivolt.be/fr/plombier-urgent/evere</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://www.sanivolt.be/fr/plombier-urgent/kraainem</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://www.sanivolt.be/fr/plombier-urgent/steenokkerzeel</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://www.sanivolt.be/fr/plombier-urgent/kortenberg</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://www.sanivolt.be/fr/plombier-urgent/grimbergen</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://www.sanivolt.be/fr/plombier-urgent/wezembeek-oppem</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://www.sanivolt.be/fr/electricien/zaventem</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://www.sanivolt.be/fr/electricien/diegem</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://www.sanivolt.be/fr/electricien/haren</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://www.sanivolt.be/fr/electricien/schaarbeek</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://www.sanivolt.be/fr/electricien/brussel-zuid</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://www.sanivolt.be/fr/electricien/machelen</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://www.sanivolt.be/fr/electricien/vilvoorde</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://www.sanivolt.be/fr/electricien/evere</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://www.sanivolt.be/fr/electricien/kraainem</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://www.sanivolt.be/fr/electricien/steenokkerzeel</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://www.sanivolt.be/fr/electricien/kortenberg</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://www.sanivolt.be/fr/electricien/grimbergen</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://www.sanivolt.be/fr/electricien/wezembeek-oppem</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://www.sanivolt.be/fr/debouchage/zaventem</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://www.sanivolt.be/fr/debouchage/diegem</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://www.sanivolt.be/fr/debouchage/haren</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://www.sanivolt.be/fr/debouchage/schaarbeek</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://www.sanivolt.be/fr/debouchage/brussel-zuid</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://www.sanivolt.be/fr/debouchage/machelen</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://www.sanivolt.be/fr/debouchage/vilvoorde</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://www.sanivolt.be/fr/debouchage/evere</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://www.sanivolt.be/fr/debouchage/kraainem</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://www.sanivolt.be/fr/debouchage/steenokkerzeel</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://www.sanivolt.be/fr/debouchage/kortenberg</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://www.sanivolt.be/fr/debouchage/grimbergen</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://www.sanivolt.be/fr/debouchage/wezembeek-oppem</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://www.sanivolt.be/fr/chauffage/zaventem</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://www.sanivolt.be/fr/chauffage/diegem</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://www.sanivolt.be/fr/chauffage/haren</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://www.sanivolt.be/fr/chauffage/schaarbeek</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://www.sanivolt.be/fr/chauffage/brussel-zuid</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://www.sanivolt.be/fr/chauffage/machelen</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://www.sanivolt.be/fr/chauffage/vilvoorde</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://www.sanivolt.be/fr/chauffage/evere</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://www.sanivolt.be/fr/chauffage/kraainem</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://www.sanivolt.be/fr/chauffage/steenokkerzeel</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://www.sanivolt.be/fr/chauffage/kortenberg</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://www.sanivolt.be/fr/chauffage/grimbergen</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://www.sanivolt.be/fr/chauffage/wezembeek-oppem</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://www.sanivolt.be/fr/renovation-sanitaire/zaventem</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://www.sanivolt.be/fr/renovation-sanitaire/diegem</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://www.sanivolt.be/fr/renovation-sanitaire/haren</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://www.sanivolt.be/fr/renovation-sanitaire/schaarbeek</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://www.sanivolt.be/fr/renovation-sanitaire/brussel-zuid</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://www.sanivolt.be/fr/renovation-sanitaire/machelen</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://www.sanivolt.be/fr/renovation-sanitaire/vilvoorde</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://www.sanivolt.be/fr/renovation-sanitaire/evere</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://www.sanivolt.be/fr/renovation-sanitaire/kraainem</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://www.sanivolt.be/fr/renovation-sanitaire/steenokkerzeel</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://www.sanivolt.be/fr/renovation-sanitaire/kortenberg</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://www.sanivolt.be/fr/renovation-sanitaire/grimbergen</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://www.sanivolt.be/fr/renovation-sanitaire/wezembeek-oppem</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://www.sanivolt.be/fr/climatisation/zaventem</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://www.sanivolt.be/fr/climatisation/diegem</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://www.sanivolt.be/fr/climatisation/haren</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://www.sanivolt.be/fr/climatisation/schaarbeek</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://www.sanivolt.be/fr/climatisation/brussel-zuid</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://www.sanivolt.be/fr/climatisation/machelen</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://www.sanivolt.be/fr/climatisation/vilvoorde</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://www.sanivolt.be/fr/climatisation/evere</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://www.sanivolt.be/fr/climatisation/kraainem</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://www.sanivolt.be/fr/climatisation/steenokkerzeel</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://www.sanivolt.be/fr/climatisation/kortenberg</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://www.sanivolt.be/fr/climatisation/grimbergen</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://www.sanivolt.be/fr/climatisation/wezembeek-oppem</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://www.sanivolt.be/fr/bornes-de-recharge/zaventem</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://www.sanivolt.be/fr/bornes-de-recharge/diegem</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://www.sanivolt.be/fr/bornes-de-recharge/haren</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://www.sanivolt.be/fr/bornes-de-recharge/schaarbeek</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://www.sanivolt.be/fr/bornes-de-recharge/brussel-zuid</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://www.sanivolt.be/fr/bornes-de-recharge/machelen</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://www.sanivolt.be/fr/bornes-de-recharge/vilvoorde</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://www.sanivolt.be/fr/bornes-de-recharge/evere</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://www.sanivolt.be/fr/bornes-de-recharge/kraainem</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://www.sanivolt.be/fr/bornes-de-recharge/steenokkerzeel</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://www.sanivolt.be/fr/bornes-de-recharge/kortenberg</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://www.sanivolt.be/fr/bornes-de-recharge/grimbergen</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://www.sanivolt.be/fr/bornes-de-recharge/wezembeek-oppem</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>
 </urlset>

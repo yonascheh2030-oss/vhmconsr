@@ -1,7 +1,7 @@
 import { useEffect } from "react";
 import "@/App.css";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
-import { HelmetProvider } from "react-helmet-async";
+import { HelmetProvider, Helmet } from "react-helmet-async";
 import Lenis from "lenis";
 import { Toaster } from "sonner";
 import { Header } from "@/components/Header";
@@ -19,6 +19,8 @@ import { Footer } from "@/components/Footer";
 import { FloatingWhatsApp } from "@/components/FloatingWhatsApp";
 import { AreaPage } from "@/components/AreaPage";
 import { ServiceAreaPage } from "@/components/ServiceAreaPage";
+import { LangProvider } from "@/i18n/LangContext";
+import { SITE } from "@/constants/site";
 
 const Home = () => (
   <main>
@@ -36,6 +38,25 @@ const Home = () => (
     <Footer />
     <FloatingWhatsApp />
   </main>
+);
+
+const HomeFrMeta = () => (
+  <Helmet>
+    <html lang="fr" />
+    <title>Sanivolt | Plombier & Électricien d'urgence 24/7 — Zaventem, Diegem, Haren, Schaerbeek</title>
+    <meta
+      name="description"
+      content="Sanivolt : plombier & électricien d'urgence, joignable 24/7 à Zaventem, Diegem, Haren, Bruxelles-Midi, Schaerbeek et environs. Fuite, bouchon, panne de courant ? Sur place dans l'heure. Appelez le +32 470 00 00 00."
+    />
+    <link rel="canonical" href={`${SITE.domain}/fr`} />
+    <link rel="alternate" hreflang="nl" href={`${SITE.domain}/`} />
+    <link rel="alternate" hreflang="fr" href={`${SITE.domain}/fr`} />
+    <link rel="alternate" hreflang="x-default" href={`${SITE.domain}/`} />
+    <meta property="og:title" content="Sanivolt | Plombier & Électricien d'urgence 24/7" />
+    <meta property="og:description" content="Fuite, bouchon ou panne de courant ? Sanivolt est là 24/7 à Zaventem, Diegem, Haren, Bruxelles-Midi, Schaerbeek et environs. Sur place dans l'heure." />
+    <meta property="og:url" content={`${SITE.domain}/fr`} />
+    <meta property="og:locale" content="fr_BE" />
+  </Helmet>
 );
 
 function App() {
@@ -60,9 +81,12 @@ function App() {
       <HelmetProvider>
         <BrowserRouter>
           <Routes>
-            <Route path="/" element={<Home />} />
-            <Route path="/spoedloodgieter/:slug" element={<AreaPage />} />
-            <Route path="/:serviceSlug/:areaSlug" element={<ServiceAreaPage />} />
+            <Route path="/" element={<LangProvider lang="nl"><Home /></LangProvider>} />
+            <Route path="/fr" element={<LangProvider lang="fr"><HomeFrMeta /><Home /></LangProvider>} />
+            <Route path="/spoedloodgieter/:slug" element={<LangProvider lang="nl"><AreaPage /></LangProvider>} />
+            <Route path="/fr/plombier-electricien/:slug" element={<LangProvider lang="fr"><AreaPage /></LangProvider>} />
+            <Route path="/fr/:serviceSlug/:areaSlug" element={<LangProvider lang="fr"><ServiceAreaPage /></LangProvider>} />
+            <Route path="/:serviceSlug/:areaSlug" element={<LangProvider lang="nl"><ServiceAreaPage /></LangProvider>} />
           </Routes>
         </BrowserRouter>
       </HelmetProvider>
