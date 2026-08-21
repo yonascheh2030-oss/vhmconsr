@@ -20,13 +20,14 @@ import { MaskLine, Reveal, ChapterTag } from "./Reveal";
 import { AREAS } from "../constants/areas";
 import { SERVICE_INFO } from "../constants/services";
 import { SITE } from "../constants/site";
-import { useLang, areaPagePath, servicePagePath, NL2FR_SERVICE } from "../i18n/LangContext";
+import { useLang, areaPagePath, servicePagePath, SERVICE_SLUGS } from "../i18n/LangContext";
+import { WHAT_ACCENT } from "../i18n/hub";
 
 export const ServiceAreaPage = () => {
   const { serviceSlug, areaSlug } = useParams();
   const { t, lang } = useLang();
   const service = SERVICE_INFO.find(
-    (s) => (lang === "fr" ? NL2FR_SERVICE[s.slug] : s.slug) === serviceSlug
+    (s) => (lang === "nl" ? s.slug : SERVICE_SLUGS[lang][s.slug]) === serviceSlug
   );
   const area = AREAS.find((a) => a.slug === areaSlug);
 
@@ -44,7 +45,6 @@ export const ServiceAreaPage = () => {
   const fill = (s) =>
     s.replaceAll("{service}", SD.name).replaceAll("{area}", area.name).replaceAll("{time}", area.time).replaceAll("{phone}", SITE.phoneDisplay).replaceAll("{price}", SD.price).replaceAll("{desc}", SD.desc);
   const pageUrl = `${SITE.domain}${servicePagePath(lang, service.slug, area.slug)}`;
-  const altUrl = `${SITE.domain}${servicePagePath(lang === "fr" ? "nl" : "fr", service.slug, area.slug)}`;
   const otherServices = SERVICE_INFO.filter((s) => s.slug !== service.slug);
   const otherAreas = AREAS.filter((a) => a.slug !== area.slug);
   const jsonLd = {
@@ -69,8 +69,9 @@ export const ServiceAreaPage = () => {
         <title>{fill(sp.metaTitle)}</title>
         <meta name="description" content={fill(sp.metaDesc)} />
         <link rel="canonical" href={pageUrl} />
-        <link rel="alternate" hreflang={lang} href={pageUrl} />
-        <link rel="alternate" hreflang={lang === "fr" ? "nl" : "fr"} href={altUrl} />
+        {["nl", "fr", "en", "es"].map((l) => (
+          <link key={l} rel="alternate" hreflang={l} href={`${SITE.domain}${servicePagePath(l, service.slug, area.slug)}`} />
+        ))}
         <meta property="og:title" content={fill(sp.metaTitle)} />
         <meta property="og:description" content={fill(sp.ogDesc)} />
         <meta property="og:url" content={pageUrl} />
@@ -86,7 +87,7 @@ export const ServiceAreaPage = () => {
             className="flex flex-wrap items-center gap-2 font-manrope text-xs font-semibold tracking-widest uppercase text-zinc-400 mb-10"
             data-testid="sa-breadcrumb"
           >
-            <Link to={lang === "fr" ? "/fr" : "/"} className="hover:text-brand-blue transition-colors" data-testid="sa-breadcrumb-home">
+            <Link to={lang === "nl" ? "/" : `/${lang}`} className="hover:text-brand-blue transition-colors" data-testid="sa-breadcrumb-home">
               {ap.breadcrumbHome}
             </Link>
             <ChevronRight className="w-3.5 h-3.5" />
@@ -165,7 +166,7 @@ export const ServiceAreaPage = () => {
           <Reveal>
             <h2 className="font-outfit font-black uppercase tracking-tighter text-2xl sm:text-3xl lg:text-4xl max-w-3xl">
               {SD.name} {sp.h1in} {area.name}:{" "}
-              <span className="text-brand-volt">{lang === "fr" ? "ce que nous offrons" : "dit leveren wij"}</span>
+              <span className="text-brand-volt">{WHAT_ACCENT[lang]}</span>
             </h2>
           </Reveal>
           <div className="mt-10 grid sm:grid-cols-2 gap-px bg-white/10 border border-white/10" data-testid="sa-bullets">

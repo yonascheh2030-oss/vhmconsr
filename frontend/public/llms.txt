@@ -44,3 +44,6 @@ URL-patroon: https://www.sanivolt.be/{dienst}/{gemeente}
 Diensten: spoedloodgieter, elektricien, ontstopping, verwarming, sanitair-renovatie, airco, laadpalen
 Gemeenten: zaventem, diegem, haren, schaarbeek, brussel-zuid, machelen, vilvoorde, evere, kraainem, steenokkerzeel, kortenberg, grimbergen, wezembeek-oppem
 Voorbeelden: https://www.sanivolt.be/ontstopping/vilvoorde en https://www.sanivolt.be/airco/zaventem
+
+## Talen
+De site is beschikbaar in het Nederlands (/), Frans (/fr), Engels (/en) en Spaans (/es). Elke taal heeft eigen regio-, dienst- en dienst-stad-pagina's. Dienstenhubs: /diensten/{dienst} (NL), /fr/services/{...}, /en/services/{...}, /es/servicios/{...}.

@@ -8,7 +8,6 @@ export const Header = () => {
   const [open, setOpen] = useState(false);
   const { t, lang } = useLang();
   const location = useLocation();
-  const alt = altLangPath(location.pathname);
 
   const go = (e, href) => {
     e.preventDefault();
@@ -23,20 +22,16 @@ export const Header = () => {
   const langSwitch = (
     <div className="flex items-center gap-1 border border-zinc-200 px-1 py-1" data-testid="lang-switcher">
       <Globe className="w-3.5 h-3.5 text-zinc-400 mx-1" />
-      <Link
-        to={lang === "nl" ? location.pathname : alt}
-        data-testid="lang-nl"
-        className={`px-2.5 py-1 font-outfit text-[11px] font-bold tracking-widest transition-colors ${lang === "nl" ? "bg-brand-blue text-white" : "text-zinc-500 hover:text-brand-blue"}`}
-      >
-        NL
-      </Link>
-      <Link
-        to={lang === "fr" ? location.pathname : alt}
-        data-testid="lang-fr"
-        className={`px-2.5 py-1 font-outfit text-[11px] font-bold tracking-widest transition-colors ${lang === "fr" ? "bg-brand-blue text-white" : "text-zinc-500 hover:text-brand-blue"}`}
-      >
-        FR
-      </Link>
+      {["nl", "fr", "en", "es"].map((code) => (
+        <Link
+          key={code}
+          to={altLangPath(location.pathname, code)}
+          data-testid={`lang-${code}`}
+          className={`px-2 py-1 font-outfit text-[11px] font-bold tracking-widest uppercase transition-colors ${lang === code ? "bg-brand-blue text-white" : "text-zinc-500 hover:text-brand-blue"}`}
+        >
+          {code}
+        </Link>
+      ))}
     </div>
   );
 

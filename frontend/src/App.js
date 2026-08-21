@@ -19,6 +19,7 @@ import { Footer } from "@/components/Footer";
 import { FloatingWhatsApp } from "@/components/FloatingWhatsApp";
 import { AreaPage } from "@/components/AreaPage";
 import { ServiceAreaPage } from "@/components/ServiceAreaPage";
+import { ServicePage } from "@/components/ServicePage";
 import { LangProvider } from "@/i18n/LangContext";
 import { SITE } from "@/constants/site";
 
@@ -40,24 +41,55 @@ const Home = () => (
   </main>
 );
 
-const HomeFrMeta = () => (
-  <Helmet>
-    <html lang="fr" />
-    <title>Sanivolt | Plombier & Électricien d'urgence 24/7 — Zaventem, Diegem, Haren, Schaerbeek</title>
-    <meta
-      name="description"
-      content="Sanivolt : plombier & électricien d'urgence, joignable 24/7 à Zaventem, Diegem, Haren, Bruxelles-Midi, Schaerbeek et environs. Fuite, bouchon, panne de courant ? Sur place dans l'heure. Appelez le +32 470 00 00 00."
-    />
-    <link rel="canonical" href={`${SITE.domain}/fr`} />
-    <link rel="alternate" hreflang="nl" href={`${SITE.domain}/`} />
-    <link rel="alternate" hreflang="fr" href={`${SITE.domain}/fr`} />
-    <link rel="alternate" hreflang="x-default" href={`${SITE.domain}/`} />
-    <meta property="og:title" content="Sanivolt | Plombier & Électricien d'urgence 24/7" />
-    <meta property="og:description" content="Fuite, bouchon ou panne de courant ? Sanivolt est là 24/7 à Zaventem, Diegem, Haren, Bruxelles-Midi, Schaerbeek et environs. Sur place dans l'heure." />
-    <meta property="og:url" content={`${SITE.domain}/fr`} />
-    <meta property="og:locale" content="fr_BE" />
-  </Helmet>
-);
+const HOME_META = {
+  fr: {
+    title: "Sanivolt | Plombier & Électricien d'urgence 24/7 — Zaventem, Diegem, Haren, Schaerbeek",
+    desc: "Sanivolt : plombier & électricien d'urgence, joignable 24/7 à Zaventem, Diegem, Haren, Bruxelles-Midi, Schaerbeek et environs. Fuite, bouchon, panne de courant ? Sur place dans l'heure. Appelez le +32 470 00 00 00.",
+  },
+  en: {
+    title: "Sanivolt | Emergency Plumber & Electrician 24/7 — Zaventem, Diegem, Haren, Schaerbeek",
+    desc: "Sanivolt: emergency plumber & electrician, available 24/7 in Zaventem, Diegem, Haren, Brussels-South, Schaerbeek and surroundings. Leak, blockage or power cut? On site within the hour. Call +32 470 00 00 00.",
+  },
+  es: {
+    title: "Sanivolt | Fontanero y Electricista de urgencia 24/7 — Zaventem, Diegem, Haren, Schaerbeek",
+    desc: "Sanivolt: fontanero y electricista de urgencia, disponibles 24/7 en Zaventem, Diegem, Haren, Bruselas-Sur, Schaerbeek y alrededores. ¿Fuga, atasco o apagón? In situ en una hora. Llame al +32 470 00 00 00.",
+  },
+};
+
+const HomeMeta = ({ lang }) => {
+  const m = HOME_META[lang];
+  if (!m) return null;
+  return (
+    <Helmet>
+      <html lang={lang} />
+      <title>{m.title}</title>
+      <meta name="description" content={m.desc} />
+      <link rel="canonical" href={`${SITE.domain}/${lang}`} />
+      <link rel="alternate" hreflang="nl" href={`${SITE.domain}/`} />
+      <link rel="alternate" hreflang="fr" href={`${SITE.domain}/fr`} />
+      <link rel="alternate" hreflang="en" href={`${SITE.domain}/en`} />
+      <link rel="alternate" hreflang="es" href={`${SITE.domain}/es`} />
+      <link rel="alternate" hreflang="x-default" href={`${SITE.domain}/`} />
+      <meta property="og:title" content={m.title} />
+      <meta property="og:description" content={m.desc} />
+      <meta property="og:url" content={`${SITE.domain}/${lang}`} />
+    </Helmet>
+  );
+};
+
+const LANGS = ["nl", "fr", "en", "es"];
+const AREA_PREFIX = { nl: "spoedloodgieter", fr: "plombier-electricien", en: "plumber-electrician", es: "fontanero-electricista" };
+const HUB_PREFIX = { nl: "diensten", fr: "services", en: "services", es: "servicios" };
+
+const langRoutes = (lang) => {
+  const base = lang === "nl" ? "" : `/${lang}`;
+  return [
+    <Route key={`${lang}-home`} path={base === "" ? "/" : base} element={<LangProvider lang={lang}><HomeMeta lang={lang} /><Home /></LangProvider>} />,
+    <Route key={`${lang}-area`} path={`${base}/${AREA_PREFIX[lang]}/:slug`} element={<LangProvider lang={lang}><AreaPage /></LangProvider>} />,
+    <Route key={`${lang}-hub`} path={`${base}/${HUB_PREFIX[lang]}/:slug`} element={<LangProvider lang={lang}><ServicePage /></LangProvider>} />,
+    <Route key={`${lang}-sa`} path={`${base}/:serviceSlug/:areaSlug`} element={<LangProvider lang={lang}><ServiceAreaPage /></LangProvider>} />,
+  ];
+};
 
 function App() {
   useEffect(() => {
@@ -81,12 +113,7 @@ function App() {
       <HelmetProvider>
         <BrowserRouter>
           <Routes>
-            <Route path="/" element={<LangProvider lang="nl"><Home /></LangProvider>} />
-            <Route path="/fr" element={<LangProvider lang="fr"><HomeFrMeta /><Home /></LangProvider>} />
-            <Route path="/spoedloodgieter/:slug" element={<LangProvider lang="nl"><AreaPage /></LangProvider>} />
-            <Route path="/fr/plombier-electricien/:slug" element={<LangProvider lang="fr"><AreaPage /></LangProvider>} />
-            <Route path="/fr/:serviceSlug/:areaSlug" element={<LangProvider lang="fr"><ServiceAreaPage /></LangProvider>} />
-            <Route path="/:serviceSlug/:areaSlug" element={<LangProvider lang="nl"><ServiceAreaPage /></LangProvider>} />
+            {LANGS.map((lang) => langRoutes(lang))}
           </Routes>
         </BrowserRouter>
       </HelmetProvider>

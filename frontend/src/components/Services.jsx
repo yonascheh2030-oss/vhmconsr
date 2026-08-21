@@ -1,7 +1,8 @@
 import { Droplets, Zap, Wrench, Flame, ShowerHead, Wind, BatteryCharging, ArrowUpRight } from "lucide-react";
+import { Link } from "react-router-dom";
 import { Reveal, ChapterTag } from "./Reveal";
-import { IMAGES, SITE } from "../constants/site";
-import { useLang } from "../i18n/LangContext";
+import { IMAGES } from "../constants/site";
+import { useLang, serviceHubPath } from "../i18n/LangContext";
 
 const META = [
   { icon: Droplets, num: "01", span: "md:col-span-3", image: IMAGES.plumbing },
@@ -14,7 +15,7 @@ const META = [
 ];
 
 export const Services = () => {
-  const { t } = useLang();
+  const { t, lang } = useLang();
   return (
     <section id="diensten" className="bg-brand-paper py-24 lg:py-32">
       <div className="max-w-[1400px] mx-auto px-6 lg:px-10">
@@ -33,10 +34,8 @@ export const Services = () => {
             const s = t.services.items[i];
             return (
               <Reveal key={m.num} delay={i * 0.06} className={`${m.span} bg-white`}>
-                <a
-                  href={SITE.whatsapp}
-                  target="_blank"
-                  rel="noopener noreferrer"
+                <Link
+                  to={serviceHubPath(lang, s.slug)}
                   data-testid={`service-card-${m.num}`}
                   className="group relative flex flex-col justify-between h-full min-h-[260px] p-8 hover:bg-brand-paper transition-colors duration-300 overflow-hidden"
                 >
@@ -64,7 +63,7 @@ export const Services = () => {
                     </h3>
                     <p className="mt-2 font-manrope text-sm text-zinc-500 leading-relaxed">{s.desc}</p>
                   </div>
-                </a>
+                </Link>
               </Reveal>
             );
           })}

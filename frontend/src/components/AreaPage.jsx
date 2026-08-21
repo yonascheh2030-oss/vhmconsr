@@ -80,8 +80,9 @@ export const AreaPage = () => {
         <title>{fill(ap.metaTitle)}</title>
         <meta name="description" content={metaDesc} />
         <link rel="canonical" href={pageUrl} />
-        <link rel="alternate" hreflang={lang} href={pageUrl} />
-        <link rel="alternate" hreflang={lang === "fr" ? "nl" : "fr"} href={altUrl} />
+        {["nl", "fr", "en", "es"].map((l) => (
+          <link key={l} rel="alternate" hreflang={l} href={`${SITE.domain}${areaPagePath(l, area.slug)}`} />
+        ))}
         <meta property="og:title" content={fill(ap.metaTitle)} />
         <meta property="og:description" content={fill(ap.ogDesc)} />
         <meta property="og:url" content={pageUrl} />
