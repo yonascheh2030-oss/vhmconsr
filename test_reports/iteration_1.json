@@ -1,0 +1,42 @@
+{
+  "summary": "Full backend + frontend E2E test of the BetoDecor rebuild against the public preview URL. Backend: 24 pytest cases (health, auth/JWT/bcrypt, lead creation + scoring caps, upload validation, protected file serving, admin list/filters/stats/detail/status) — all 24 PASSED. Frontend: home page (NL/FR/EN/ES switcher), full 7-step wizard happy path + validation + back-navigation data retention + submit to /bedankt, admin login (wrong + correct creds), dashboard KPIs/table sorting/3 filters, lead detail (info, media gallery with tokenized image that actually loads, score breakdown, 4 contact actions, status change + persistence after reload), logout + protected-route redirect, mobile (390px) home/wizard/footer/hamburger. All core flows work. Only 1 security deviation and 3 cosmetic issues found.",
+  "backend_issues": {
+    "critical": [],
+    "minor": [
+      {"endpoint": "POST /api/auth/login", "issue": "Brute-force lockout is ineffective behind the ingress: the rate-limit key uses request.client.host, which resolves to rotating ingress pod IPs (observed 10.79.139.10 and 10.79.139.11). 6 consecutive wrong passwords produced 6x401 and split into two counter docs (count=3 each) — never reaching the 5-attempt 429 lockout. Fix: derive the client IP from X-Forwarded-For (first hop) and/or key the counter on email only."},
+      {"endpoint": "CORS middleware", "issue": "CORS_ORIGINS=\"*\" combined with allow_credentials=True is an invalid/ignored combination per the CORS spec (browsers reject wildcard + credentials). Harmless today because the app authenticates with a Bearer header, but should be set to explicit origins if cookie auth is ever added."},
+      {"endpoint": "POST /api/auth/login", "issue": "Auth playbook expects httpOnly cookie sessions; this implementation returns the JWT in the JSON body and the frontend stores it in localStorage ('beto_admin_token'). Works, but is XSS-exposed and deviates from the playbook. Additionally /api/files/{path}?token=<jwt> puts the full JWT in a URL (visible in logs/referrers)."}
+    ]
+  },
+  "frontend_issues": {
+    "ui_bugs": [],
+    "integration_issues": [],
+    "design_issues": [
+      {"screen": "Home hero (desktop 1920px)", "issues": ["The location badge 'Zaventem · Brussel / VLAAMS-BRABANT & OMSTREKEN' sits on the bottom edge of the hero image: the text overlaps the photo and is partially clipped/illegible (low contrast against the light interior photo). Move it below the image or add a solid/blurred backdrop."]},
+      {"screen": "Admin lead detail — Contact card", "issues": ["Address renders with a leading comma (', 1930 Zaventem') when straat/huisnummer are empty; the wizard does not require street/number so this is easily reachable. LeadDetail.jsx line 92 should filter empty parts before joining."]},
+      {"screen": "/bedankt confirmation page", "issues": ["No footer / no contact details on the confirmation page (rest of the site has a full footer); page also looks very empty on a 1920x1080 viewport. Consider adding footer + next-step / contact info."]}
+    ]
+  },
+  "test_report_links": ["/app/backend/tests/backend_test.py", "/app/test_reports/pytest/pytest_results.xml"],
+  "action_items": [
+    "Fix login rate-limit identifier to use X-Forwarded-For (or email-only key) so the 5-attempt lockout actually triggers behind the k8s ingress.",
+    "Set CORS_ORIGINS to explicit origins instead of '*' while allow_credentials=True.",
+    "Cosmetic: fix hero location badge overlap/clipping, leading comma in lead-detail address, and add footer to /bedankt."
+  ],
+  "critical_code_review_comments": [
+    "server.py login(): identifier = f\"{request.client.host}:{email}\" — behind the ingress this is the proxy pod IP and it rotates, so the lockout counter is split and never reaches MAX_LOGIN_ATTEMPTS. Verified reproducible.",
+    "server.py: hash_password is imported but unused (seed_admin owns hashing) — dead import.",
+    "server.py serve_file(): only checks that the JWT is valid, not that the user still exists or has the admin role (unlike get_current_user). A valid-but-deleted user's token can still fetch private uploads.",
+    "scoring.py: CORE_POSTCODES_INT is defined AFTER location_score() uses it (works at call time, but is fragile ordering); CORE_POSTCODES also contains '1800'/'1950' (Vilvoorde/Wemmel) which are not in CORE_AREAS — verify this is intended since it grants full 20/20 location points.",
+    "scoring.py: NEAR_AREAS contains 'kortenberg' twice (harmless in a set, but signals copy/paste).",
+    "Wizard.jsx is 463 lines with 7 inline step components — consider splitting per-step components into /components/wizard/ for maintainability."
+  ],
+  "updated_files": ["/app/backend/tests/backend_test.py"],
+  "success_rate": {"backend": "100% (24/24 pytest)", "frontend": "100% of tested flows (home, i18n, wizard 7 steps + validation, admin login/dashboard/filters/detail/status/logout, mobile)"},
+  "seed_data_creation": "Created and then deleted temporary leads (voornaam TEST/TESTQA/TESTMEDIA) plus 2 uploaded 1x1 PNGs; login_attempts collection cleared. DB is back to the 8 seeded sample leads.",
+  "should_call_test_agent_after_fix": false,
+  "should_main_agent_self_test": true,
+  "test_credentials": "roberto@betodecorexpert.be / BetoDecor2026! (from /app/memory/test_credentials.md) — verified working via API and UI",
+  "context_for_next_testing_agent": "backend_test.py (24 tests, pytest, xdist enabled) covers health, scoring caps (Zaventem hot>=90, Oostende<=75, small keuken low/normal), upload 400s, protected /api/files, auth 401s, bcrypt $2b$ format, admin filters/stats/status. Cleanup fixture deletes leads with voornaam='TEST'. Wizard work-chip testids use plural Dutch keys (work-pleisterwerken, work-schilderwerken, work-afbraakwerken) — not singular. Beware: /api/auth/login has a 5-attempt lockout per (ip,email); clear db.login_attempts after negative auth tests. Frontend confirmed clean of console/page errors on all pages tested.",
+  "rca_of_the_issue": "Brute-force lockout failure RCA: FastAPI's request.client.host reflects the immediate peer (the k8s ingress/proxy pod), and this cluster fronts traffic from multiple proxy IPs. Since the lockout key is f'{ip}:{email}', failed attempts are distributed across several Mongo login_attempts documents and each stays below MAX_LOGIN_ATTEMPTS=5, so no 429 is ever returned. Reproduction: POST /api/auth/login 6x with a wrong password -> all 401; db.login_attempts then shows two docs with count=3."
+}

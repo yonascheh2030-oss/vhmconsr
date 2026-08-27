@@ -1,101 +1,109 @@
 {
-  "theme": "light",
-  "archetype": "Swiss & High-Contrast (Light Mode)",
-  "color_palette": {
-    "background": "#FAFAFA",
-    "surface": "#FFFFFF",
-    "surface_alt": "#F4F4F5",
-    "primary": "#0038FF",
-    "primary_hover": "#002ACC",
-    "secondary": "#00D4FF",
-    "text_primary": "#09090B",
-    "text_secondary": "#52525B",
-    "accent_danger": "#E11D48",
-    "border": "#E4E4E7"
+  "brand_identity": {
+    "name": "BetoDecor",
+    "positioning": "Premium Total Renovation Contractor (A-Z projects)",
+    "tone": "Professional, reliable, qualitative, experienced, high-end construction.",
+    "anti_patterns": [
+      "No cheap templates",
+      "No electric blue or '24/7 emergency' aesthetic",
+      "No over-the-top countdowns or fake reviews",
+      "No screaming colors"
+    ]
+  },
+  "theme": {
+    "mode": "light",
+    "archetype": "Organic & Earthy + Architectural"
   },
   "typography": {
-    "google_fonts": "Outfit:wght@300;400;500;700;900|Manrope:wght@400;500;600;700",
-    "headings": "font-sans font-['Outfit'] tracking-tighter text-text_primary",
-    "body": "font-sans font-['Manrope'] leading-relaxed text-text_secondary",
-    "kinetic_large": "text-5xl md:text-6xl lg:text-7xl font-black tracking-tighter uppercase",
-    "manifesto_numbers": "text-4xl md:text-6xl font-['Outfit'] text-border font-bold",
-    "editorial_marquee": "text-3xl md:text-4xl font-light font-['Outfit'] uppercase tracking-wide"
-  },
-  "spacing_system": "Generous. Use py-24 to py-32 for section padding. gap-8 to gap-16 for grids.",
-  "visual_enhancers": {
-    "image_treatment": "Treat photos with a slight desaturation or duotone effect. Use crisp borders with 0px radius (sharp corners) to maintain the Swiss editorial feel.",
-    "hover_states": "Micro-interactions: Buttons translate up by 2px and cast a hard 4px solid shadow. Cards have borders that change from #E4E4E7 to #0038FF.",
-    "borders": "1px solid #E4E4E7. Use grid lines to separate sections (border-t, border-b)."
-  },
-  "motion": {
-    "hero_reveal": "Framer Motion: Masked line-by-line text reveal (initial {y: '100%'}, animate {y: 0}, overflow-hidden container).",
-    "marquee": "react-fast-marquee for the 24/7 location ribbon, ultra-smooth, slow.",
-    "scroll": "MANDATORY: Lenis for smooth momentum scrolling.",
-    "parallax": "Subtle framer-motion parallax on hero images (y offset linked to scroll)."
-  },
-  "components": {
-    "buttons": {
-      "primary": "bg-primary text-white px-8 py-4 text-sm font-bold tracking-widest uppercase hover:-translate-y-1 hover:shadow-[4px_4px_0px_#09090B] transition-transform",
-      "whatsapp": "bg-[#25D366] text-white px-8 py-4 text-sm font-bold tracking-widest uppercase hover:-translate-y-1 hover:shadow-[4px_4px_0px_#09090B] transition-transform flex items-center gap-2",
-      "emergency": "bg-accent_danger text-white px-8 py-4 text-sm font-bold tracking-widest uppercase flex items-center gap-2 animate-pulse"
+    "headings": {
+      "family": "Cabinet Grotesk",
+      "weights": ["400", "700", "800"],
+      "scale": "text-4xl to text-6xl for hero, tight tracking.",
+      "description": "Architectural, bold, authoritative. Used for marketing headlines and major section titles."
     },
-    "cards": {
-      "service": "bg-surface border border-border p-8 hover:border-primary transition-colors flex flex-col justify-between group",
-      "review": "bg-surface_alt p-8 border border-border"
+    "body": {
+      "family": "IBM Plex Sans",
+      "weights": ["400", "500", "600"],
+      "scale": "text-base for reading, text-sm for dashboard data.",
+      "description": "Clean, highly legible, professional. Perfect for multi-step wizards, data tables, and CRM dashboards."
+    }
+  },
+  "colors": {
+    "background": {
+      "page": "#FDFCFB",
+      "surface": "#FFFFFF",
+      "dashboard_bg": "#F5F5F4"
     },
-    "forms": {
-      "inputs": "bg-transparent border-b border-border py-4 focus:outline-none focus:border-primary transition-colors rounded-none w-full"
+    "brand": {
+      "primary": "#9C5B3E",
+      "primary_hover": "#7A452E",
+      "secondary": "#292524"
+    },
+    "text": {
+      "main": "#1C1917",
+      "muted": "#78716C",
+      "inverse": "#FFFFFF"
+    },
+    "border": {
+      "subtle": "#E7E5E4",
+      "strong": "#D6D3D1"
+    },
+    "crm_badges": {
+      "hot": { "bg": "#FEE2E2", "text": "#991B1B", "border": "#FCA5A5", "range": "90-100" },
+      "high": { "bg": "#FEF3C7", "text": "#92400E", "border": "#FCD34D", "range": "75-89" },
+      "normal": { "bg": "#E0F2FE", "text": "#075985", "border": "#BAE6FD", "range": "50-74" },
+      "low": { "bg": "#F5F5F4", "text": "#57534E", "border": "#E7E5E4", "range": "0-49" }
     }
   },
   "layouts": {
-    "header": "Fixed, sticky, backdrop-blur-xl bg-white/80, 1px bottom border. Contains Logo, Nav links, Emergency Call CTA.",
-    "hero": "High-impact kinetic typography. 'SPOEDKLUSSEN.' 'LOODGIETER & ELEKTRICIEN.' '24/7 BEREIKBAAR.' Side-by-side with abstract water/electric 3D visual or desaturated photo. Clear WhatsApp and Call CTAs.",
-    "marquee_locations": "Full-width sliding text: '24/7 SPOEDDIENST - ZAVENTEM - DIEGEM - HAREN - SCHAERBEEK - ZUID - '",
-    "services_bento": "Tetris grid layout (md:grid-cols-8 or 12). 7 services (loodgieterij spoed, elektriciteit, sanitair renovatie, verwarming, ontstopping, airco, laadpalen). Mix large spans and small squares.",
-    "werkwijze_manifesto": "Numbered steps (01, 02, 03, 04) structured as a manifesto. Large typography '01 BEL ONS', '02 DIAGNOSE', etc.",
-    "before_after_gallery": "Clipped image frames showing transformations. Use a slider or side-by-side hover reveal.",
-    "pricing_transparency": "Minimalist table or text grid showing starting prices and 'Kennismakingsaanbieding' (introductory offer).",
-    "reviews": "Editorial quotes. Large serif-like or elegant sans-serif quote text, author name below.",
-    "werkgebied_seo": "A text-heavy but beautifully typeset section listing all regions served. Good for SEO.",
-    "lead_form": "Minimalist form floating in a clean container, sharp edges. Name, Phone, Service, Message.",
-    "faq": "Accordion list (Shadcn based but unstyled to look raw/editorial, border-b only).",
-    "footer": "Massive 'SANIVOLT' text. Info@sanivolt.be, +32 470 00 00 00, SEO links."
+    "marketing_homepage": "Bento Grid Protocol. Generous spacing (p-16 to p-24). Asymmetric arrangements. Avoid generic centered text. Use overlapping images and strong left-aligned typography.",
+    "intake_wizard": "Centralized card layout (max-w-3xl) with a visible step progress bar ('Stap X van 7'). Clear typography, plenty of padding (p-8).",
+    "admin_dashboard": "High-density Grid Protocol. Sidebar navigation. KPI summary cards (col-span-1) at the top. Full-width data tables below. Use cardless or 1px border cards."
+  },
+  "visual_enhancers": {
+    "shadows": "Ambient and soft: `shadow-[0_8px_30px_rgb(0,0,0,0.04)]` for marketing cards.",
+    "borders": "1px solid `border-stone-200`. Crisp structural lines.",
+    "radius": "`rounded-xl` for cards and images, `rounded-full` for primary marketing CTAs to add approachability.",
+    "motion": "Use Framer Motion for wizard step transitions (slide in/out horizontally). Hover lifts (`-translate-y-1`) for dashboard cards."
+  },
+  "component_guidelines": {
+    "buttons": "Primary: `bg-[#9C5B3E] text-white hover:bg-[#7A452E] rounded-full`. Use `rounded-lg` for dashboard utilities.",
+    "inputs_forms": "Customized Shadcn inputs. `border-stone-300`, `focus:ring-[#9C5B3E]`, `focus:border-transparent`. Ensure large touch targets for mobile.",
+    "data_table": "Shadcn Table. Clean rows with `hover:bg-stone-50`. Incorporate the custom score badges in the 'Score' column.",
+    "wizard_progress": "A clear visual progress track (e.g., segmented line) with text 'Stap X van 7'. Must support back navigation without data loss."
   },
   "media": {
-    "image_urls": {
-      "hero_conceptual": {
-        "url": "https://images.pexels.com/photos/9498187/pexels-photo-9498187.jpeg",
-        "description": "Abstract water and electricity concept, use as Hero thematic visual."
-      },
-      "plumbing_service": {
-        "url": "https://images.pexels.com/photos/16509869/pexels-photo-16509869.jpeg",
-        "description": "Plumbing service representation."
-      },
-      "electricity_service": {
-        "url": "https://images.unsplash.com/photo-1660330589693-99889d60181e",
-        "description": "Electrician working."
-      },
-      "renovation_service": {
-        "url": "https://images.pexels.com/photos/6444245/pexels-photo-6444245.jpeg",
-        "description": "Modern clean bathroom renovation."
-      }
-    }
+    "hero_living_room": "https://images.unsplash.com/photo-1705326701287-346fc37a2c86?crop=entropy&cs=srgb&fm=jpg&ixid=M3w4NjA2OTV8MHwxfHNlYXJjaHw0fHxsdXh1cnklMjBsaXZpbmclMjByb29tJTIwaW50ZXJpb3J8ZW58MHx8fHwxNzg3ODE0NTc2fDA&ixlib=rb-4.1.0&q=85",
+    "kitchen_reno": "https://images.pexels.com/photos/7045356/pexels-photo-7045356.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940",
+    "bathroom_reno": "https://images.pexels.com/photos/35868666/pexels-photo-35868666.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940",
+    "blueprint_arch": "https://images.pexels.com/photos/4134179/pexels-photo-4134179.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940",
+    "construction_process": "https://images.unsplash.com/photo-1634586648651-f1fb9ec10d90?crop=entropy&cs=srgb&fm=jpg&ixid=M3w4NTYxODF8MHwxfHNlYXJjaHw0fHxob3VzZSUyMHJlbm92YXRpb24lMjBjb250cmFjdG9yfGVufDB8fHx8MTc4NzgxNDU3Nnww&ixlib=rb-4.1.0&q=85"
+  },
+  "3d_libraries": {
+    "recommendation": "Not required for this project. High-quality real photography builds more trust for physical renovation. Keep the focus on 2D crisp layouts and high-res images."
   },
   "instructions_to_main_agent": [
-    "Build a single-page scrolling marketing site using Vite + React + Tailwind.",
-    "Strictly follow the 'Licht, clean, betrouwbaar' but highly editorial Awwwards aesthetic.",
-    "Use Lucide-React for icons.",
-    "Install and use Lenis for smooth scrolling.",
-    "Install and use Framer Motion for scroll reveals and the kinetic hero.",
-    "Install and use react-fast-marquee for the location ribbon.",
-    "Use raw HTML/Tailwind for layout sections (do not rely on Shadcn cards for the main structure, only use Shadcn for interactive logic like forms or accordions if needed).",
-    "Ensure all interactive elements have data-testid attributes."
+    "Discard the old 'Sanivolt' electric blue (#0038FF) and emergency plumber styling. Use the new 'BetoDecor' premium warm color palette.",
+    "Build a multilingual header (NL/FR/EN/ES dropdown) ensuring BetoDecor serves the Brussels region.",
+    "Implement the marketing homepage with the provided copy ('BetoDecor — Totaalrenovatie & Bouw...') and primary CTA 'Vraag een renovatieofferte aan'.",
+    "Create the 7-step intake wizard: (1) Type project, (2) Omvang, (3) Welke werken, (4) Budget, (5) Planning, (6) Locatie, (7) Foto's/plannen + contact.",
+    "Ensure the wizard maintains state so users can navigate back. Include a 'Stap X van 7' visual indicator and photo/PDF upload with previews.",
+    "Strict commercial rule: Never suggest an automatic definitive price to the user. Always frame the output as 'Renovatieaanvraag' or 'Projectbeoordeling'.",
+    "Build a secure Admin Login page.",
+    "Build the CRM Dashboard for 'Roberto': Include KPI cards (New/HOT/HIGH/NORMAL/LOW leads, total value, avg budget, location stats).",
+    "Implement the lead table sorted by Lead Score (0-100) using the specified color badges. Lead statuses: Nieuw / Bezocht / Offerte verzonden.",
+    "Implement the Lead Detail page: Show project info, media gallery, contact actions (Bellen/E-mail/WhatsApp/Plaatsbezoek plannen) and status toggles.",
+    "Use Lucide-react for all icons, favoring thin, professional strokes.",
+    "Add `data-testid` attributes to all interactive elements for robust automated testing."
   ],
-  "UNIVERSAL_GUIDELINES_FOR_MAIN_AGENT": [
-    "You MUST NOT apply universal transition (transition: all).",
-    "You MUST NOT center align the app container in App.css.",
-    "Every interaction needs micro-animations (hover states, focus).",
-    "Use 2-3x more spacing than feels comfortable (e.g. py-24, py-32 for sections).",
-    "Never use placeholder URLs (like via.placeholder.com). Use the provided image URLs."
+  "universal_guidelines_for_main_agent": [
+    "Do not use generic centered layouts or simplistic gradients.",
+    "Use glass-morphism selectively (e.g., sticky header: `backdrop-blur-xl bg-white/80 border-b border-stone-200`).",
+    "Create depth through layered design elements and generous spacing (2-3x standard padding).",
+    "Never use AI emoji characters.",
+    "Implement accessible hover/focus states.",
+    "Use Sonner for toast notifications.",
+    "Use Shadcn UI components but heavily customize them to match the BetoDecor premium architectural brand.",
+    "Ensure text contrast ratios meet APCA/WCAG standards."
   ]
 }

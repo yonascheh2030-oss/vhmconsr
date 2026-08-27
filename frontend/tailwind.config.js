@@ -8,10 +8,24 @@ module.exports = {
   theme: {
     extend: {
       fontFamily: {
+        heading: ['"Cabinet Grotesk"', 'sans-serif'],
+        body: ['"IBM Plex Sans"', 'sans-serif'],
         outfit: ['Outfit', 'sans-serif'],
         manrope: ['Manrope', 'sans-serif'],
       },
       colors: {
+        beto: {
+          primary: '#9C5B3E',
+          primaryhover: '#7A452E',
+          secondary: '#292524',
+          ink: '#1C1917',
+          muted: '#78716C',
+          paper: '#FDFCFB',
+          surface: '#FFFFFF',
+          dash: '#F5F5F4',
+          border: '#E7E5E4',
+          borderstrong: '#D6D3D1',
+        },
         brand: {
           blue: '#0038FF',
           bluehover: '#002ACC',
